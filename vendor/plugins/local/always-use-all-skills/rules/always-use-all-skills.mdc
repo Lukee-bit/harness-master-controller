@@ -1,0 +1,86 @@
+---
+alwaysApply: true
+description: Light master controller. Always-on voice stack, forced project memory, tiny conditional catalog for design, coding, SEO, browser, and review. Judgment-based Advisor and subagent-creator outside the catalog.
+---
+
+# Always Use All Skills (Light)
+
+Master controller for this machine. **Light edition:** small catalog so conditional selection is feasible every turn.
+
+Hooks enforce routing, voice lint, and project memory. See `~/.cursor/hooks.json`.
+
+## Always apply
+
+1. This rule (`always-use-all-skills.mdc`)
+2. Skill `~/.cursor/skills/my-workflow/always-use-all-skills/SKILL.md`
+3. Plugin `~/.cursor/plugins/local/always-use-all-skills/`
+4. `humanizer-stack` (skills `humanizer` + `structural-humanizer`, rule + plugin)
+5. `human-voice-rewrite`
+6. `unslop`
+7. **`project-memory` rule + skill** (forced `.cursor/memory/`)
+8. **HEADROOM FORCE** (MCP + proxy; Layer B, not a catalog skill)
+
+Forced writing stack: `humanizer-stack` (pass 1 humanizer, pass 2 structural-humanizer), then `human-voice-rewrite` + `unslop` as voice layer. Re-Read humanizer + structural-humanizer for mid-length user-facing prose; on pure-code turns obey bans without a second full body re-Read.
+
+## Voice bans (every reply)
+
+No em dashes. Never say "workflow". No AI clichés (utilize, leverage, seamless, robust, enhance as filler). Peer tone. No assistant framing.
+
+## PROJECT MEMORY FORCE (every workspace)
+
+If `.cursor/memory/` is missing, create and seed it. Before non-trivial work, Read core memory files. During/after work, update them. See `project-memory` rule. Single memory system only.
+
+
+## HEADROOM FORCE (always on)
+
+Headroom MCP and the local proxy are mandatory for every session. Before reasoning on tool output, file dumps, logs, JSON, or search results, call `headroom_compress`. Use `headroom_retrieve` by hash when you need the full original. Use `headroom_stats` when checking savings or health. Never disable, skip, or work around Headroom for convenience. Do not run `headroom learn` into `.cursor/rules` (project memory stays `.cursor/memory/` only). Proxy must stay running; Override OpenAI Base URL must point at `~/.cursor/headroom-proxy-url.txt`.
+
+## ADVISOR (Layer B, judgment)
+
+Judgment-based, not auto-enabled. The agent reasons about whether a second opinion materially helps the current task, and consults only when it judges that it does. Do not flip Advisor on up front; let relevance decide.
+
+Consult the Advisor plugin at its stock checkpoints: before a major decision, when stuck after real attempts, and before declaring a substantial task done. On request (`/advisor ask ...` or a plain ask for a second opinion), run a one-off consult. Stay quiet for routine steps and anything you can verify yourself.
+
+When consulting, omit Task `model` or pass `inherit` unless the user names a slug from this session's Task `available_subagent_models`. If Task rejects a slug, use `inherit` and say so in one line. Do not invent or prefer a model-pool file.
+
+Enabling the mode for a conversation is allowed only when you judge a checkpoint consult is warranted, following the Advisor skill's state shape. Never enable it as a default. Thermos stays the tool for deep PR/security review. Never add Advisor to the skill catalog indexes. Keep Advisor available; prefer `/advisor nudge off` (or state `nudge: false`) so stop-hook spam does not force consults. Consult only when a second opinion is useful for the task.
+
+## SUBAGENTS
+
+Use only `subagent_type` values listed for this session's Task tool (built-ins, loaded plugin agents such as `advisor-subagent`, and custom agents already in the enum). Omit `model` or pass `inherit` unless the user names a Task-accepted slug.
+
+When creating a custom agent with `cursor-subagent-creator`, write `.cursor/agents/<name>.md` with valid frontmatter, a non-empty prompt body, and `model: inherit`. Then tell the user to **Reload Window** before Task can accept `subagent_type: <name>`. Until reload, delegate with stock or plugin types. Do not claim a brand-new file is live in Task without a reload.
+
+## LIGHT CATALOG JUDGMENT (every turn)
+
+Router matches are a floor. The ceiling is this **entire** light list. Reason over each item; Read and apply those that fit.
+
+| Item | Load when |
+|------|-----------|
+| design-taste-frontend | References, URLs, landing/portfolio UI |
+| frontend-design | Distinct art direction |
+| ui-ux-pro-max | Style / font / palette / UX lookup |
+| image-to-code | Comp-first; no strong reference |
+| browser-testing-with-devtools | Verify in browser |
+| seo-mastery | SEO / schema / CWV / AI search |
+| ponytail | Build / simplify / shortest correct code |
+| cursor-team-kit | TS standards, CI, ship helpers |
+| thermos | Deep PR / security / maintainability review |
+| advisor (plugin) | Second opinion at a major decision, when stuck, or before done |
+| cursor-subagent-creator | Build a custom Cursor subagent under `.cursor/agents/` |
+
+Indexes: `~/.cursor/plugins/local/always-use-all-skills/catalogs/*-index.json`
+
+MCP tooling (Context7, Awwwards, GitHub) and Advisor live outside this catalog — see `config/mcp/`, `config/advisor/`, and KEEP.md Layer B.
+
+Never load two variants of the same skill name for one subtask. Never pull skills outside this catalog.
+
+## Execution order
+
+**Phase A** — mandatory always-on reads + project memory create/read + Advisor soft enable if needed  
+**Phase B** — router matches + LIGHT CATALOG JUDGMENT  
+**Phase C** — voice on user-facing prose; memory write; Advisor checkpoints when due; stop hook (voice + unread routes + memory nudge)
+
+## Coding rules (when writing code)
+
+Apply ponytail (simplest correct). Apply cursor-team-kit: no inline imports; exhaustive TypeScript switches. For deep branch review, load thermos.

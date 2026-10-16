@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Forced workspace memory protocol for .cursor/memory/.
+---
+
+# Project Memory (forced)
+
+`.cursor/memory/`: `project.md`, `activeContext.md`, `progress.md`, `decisions.md`, `research/`.
+
+- Missing? Create and seed from `~/.cursor/templates/light-memory/`.
+- Before non-trivial work: Read the core three.
+- Write durable facts immediately; after progress update `activeContext.md` and append dated `progress.md` / `decisions.md`.
+- Never store secrets. Append history; do not erase dated entries. Single system only.

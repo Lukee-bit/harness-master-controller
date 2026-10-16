@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+description: Force context-mode sandbox execution so raw output stays out of context.
+---
+
+# context-mode (forced)
+
+Runs commands, file reads, and fetches in a sandbox; only the printed result enters context. Raw output stays in a searchable store.
+
+- Analysis over large output: `ctx_execute(language, code)`, `console.log()` only the answer.
+- Multi-step gather: `ctx_batch_execute(commands, queries)`.
+- Web: `ctx_fetch_and_index(url)` then `ctx_search(queries)`.
+- `ctx stats` shows bytes kept out.
+- Never pipe huge logs, JSON, or HTML straight into context when these can answer.

@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-10-16T03:27:25.313828+00:00",
+  "edition": "light",
+  "count": 16,
+  "items": [
+    {
+      "catalog_id": ".cursor/rules/always-use-all-skills.mdc",
+      "name": "always-use-all-skills",
+      "path": "~/.cursor/rules/always-use-all-skills.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "always-use-all-skills",
+      "triggers": [],
+      "domain": ""
+    },
+    {
+      "catalog_id": ".cursor/rules/humanizer-stack.mdc",
+      "name": "humanizer-stack",
+      "path": "~/.cursor/rules/humanizer-stack.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Always-on binder for humanizer + structural-humanizer.",
+      "triggers": [],
+      "domain": ""
+    },
+    {
+      "catalog_id": ".cursor/rules/project-memory.mdc",
+      "name": "project-memory",
+      "path": "~/.cursor/rules/project-memory.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Forced .cursor/memory/ create-read-write protocol for every workspace.",
+      "triggers": [],
+      "domain": ""
+    },
+    {
+      "catalog_id": "ponytail/rules/ponytail.mdc",
+      "name": "ponytail",
+      "path": "~/.cursor/plugins/local/ponytail/rules/ponytail.mdc",
+      "mode": "apply when relevant",
+      "native_always_apply": false,
+      "description": "ponytail",
+      "triggers": [],
+      "domain": "coding"
+    },
+    {
+      "catalog_id": "cursor-team-kit/rules/no-inline-imports.mdc",
+      "name": "no-inline-imports",
+      "path": "~/.cursor/plugins/cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e/rules/no-inline-imports.mdc",
+      "mode": "apply when relevant",
+      "native_always_apply": false,
+      "description": "no-inline-imports",
+      "triggers": [],
+      "domain": "coding"
+    },
+    {
+      "catalog_id": "cursor-team-kit/rules/typescript-exhaustive-switch.mdc",
+      "name": "typescript-exhaustive-switch",
+      "path": "~/.cursor/plugins/cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e/rules/typescript-exhaustive-switch.mdc",
+      "mode": "apply when relevant",
+      "native_always_apply": false,
+      "description": "typescript-exhaustive-switch",
+      "triggers": [],
+      "domain": "coding"
+    },
+    {
+      "catalog_id": ".cursor/rules/rtk.mdc",
+      "name": "rtk",
+      "path": "~/.cursor/rules/rtk.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force RTK shell-output compression via preToolUse hook plus direct rtk read/grep/find.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/mcptoon.mdc",
+      "name": "mcptoon",
+      "path": "~/.cursor/rules/mcptoon.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force mcptoon skill/tool resolution so full schemas stay out of context.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/context-mode.mdc",
+      "name": "context-mode",
+      "path": "~/.cursor/rules/context-mode.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force context-mode ctx_execute/ctx_search so raw output stays in the sandbox.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/sqz-squeez.mdc",
+      "name": "sqz-squeez",
+      "path": "~/.cursor/rules/sqz-squeez.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force sqz + squeez reversible compression of tool output.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/jcodemunch.mdc",
+      "name": "jcodemunch",
+      "path": "~/.cursor/rules/jcodemunch.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force jCodeMunch symbol-level retrieval over whole-file reads.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/claude-context.mdc",
+      "name": "claude-context",
+      "path": "~/.cursor/rules/claude-context.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force Claude Context semantic code search; local Milvus + Ollama.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/cce.mdc",
+      "name": "cce",
+      "path": "~/.cursor/rules/cce.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Force Code Context Engine context_search over whole-file reads.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/token-optimizer.mdc",
+      "name": "token-optimizer",
+      "path": "~/.cursor/rules/token-optimizer.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Per-session token accounting (Cursor adapter); RTK owns Shell.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/lumen.mdc",
+      "name": "lumen",
+      "path": "~/.cursor/rules/lumen.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Lumen local semantic code search via the mcptoon gateway.",
+      "triggers": [],
+      "domain": "token-optimization"
+    },
+    {
+      "catalog_id": ".cursor/rules/voice.mdc",
+      "name": "voice",
+      "path": "~/.cursor/rules/voice.mdc",
+      "mode": "always apply",
+      "native_always_apply": true,
+      "description": "Hard bans + terse rules; humanizer law on demand.",
+      "triggers": [],
+      "domain": "voice"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GH_TOKEN"
+      }
+    }
+  },
+  "_comment": "Prefer the official github/github-mcp-server install docs if the package name differs in your Cursor version. Auth via PAT or gh."
+}

@@ -1,0 +1,414 @@
+{
+  "edition": "light",
+  "version": "1.2.0",
+  "description": "Hard allowlist for cursor-master-controller-light. Skills/plugins/rules only. MCP tooling documented under config/mcp/.",
+  "skills": [
+    {
+      "catalog_id": "my-workflow/always-use-all-skills",
+      "relpath": "my-workflow/always-use-all-skills",
+      "mode": "always apply",
+      "triggers": [
+        "always use all skills",
+        "master controller"
+      ]
+    },
+    {
+      "catalog_id": "humanizer",
+      "relpath": "humanizer",
+      "mode": "apply when relevant",
+      "triggers": [
+        "humanize",
+        "humanizer",
+        "deslop",
+        "de-slop",
+        "AI writing",
+        "surface pass"
+      ],
+      "description": "Always-on voice stack (pass 1). Remove signs of AI-generated writing. Forced with structural-humanizer under humanizer-stack; not task-triggered only. Loads on prose/humanize intent via the router."
+    },
+    {
+      "catalog_id": "structural-humanizer",
+      "relpath": "structural-humanizer",
+      "mode": "apply when relevant",
+      "triggers": [
+        "structural humanizer",
+        "structural pass",
+        "deep humanize",
+        "discourse",
+        "storyscope"
+      ],
+      "description": "Always-on voice stack (pass 2). Remove discourse-level AI writing signs after humanizer. Forced under humanizer-stack; not task-triggered only. Loads on prose/humanize intent via the router."
+    },
+    {
+      "catalog_id": "my-workflow/human-voice-rewrite",
+      "relpath": "my-workflow/human-voice-rewrite",
+      "mode": "apply when relevant",
+      "triggers": [
+        "human voice",
+        "rewrite voice"
+      ],
+      "description": " Loads on prose/humanize intent via the router."
+    },
+    {
+      "catalog_id": "my-workflow/unslop",
+      "relpath": "my-workflow/unslop",
+      "mode": "apply when relevant",
+      "triggers": [
+        "unslop",
+        "remove slop"
+      ],
+      "description": " Loads on prose/humanize intent via the router."
+    },
+    {
+      "catalog_id": "my-workflow/project-memory",
+      "relpath": "my-workflow/project-memory",
+      "mode": "always apply",
+      "triggers": [
+        "project memory",
+        "workspace memory",
+        ".cursor/memory",
+        "activeContext",
+        "durable knowledge"
+      ]
+    },
+    {
+      "catalog_id": "design-taste-frontend",
+      "relpath": "design-taste-frontend",
+      "mode": "apply when relevant",
+      "domain": "design",
+      "triggers": [
+        "landing page",
+        "portfolio",
+        "redesign",
+        "Awwwards",
+        "Linear-style",
+        "reference site",
+        "screenshot",
+        "beautiful website",
+        "anti-slop frontend",
+        "design taste",
+        "UI direction",
+        "like Linear",
+        "like Stripe"
+      ]
+    },
+    {
+      "catalog_id": "design/anthropics/frontend-design",
+      "relpath": "design/anthropics/frontend-design",
+      "mode": "apply when relevant",
+      "domain": "design",
+      "triggers": [
+        "frontend design",
+        "distinctive UI",
+        "visual identity",
+        "typography",
+        "aesthetic direction",
+        "templated UI",
+        "art direction"
+      ]
+    },
+    {
+      "catalog_id": "ui-ux-pro-max",
+      "relpath": "ui-ux-pro-max",
+      "mode": "apply when relevant",
+      "domain": "design",
+      "triggers": [
+        "ui ux",
+        "font pairing",
+        "color palette",
+        "design system lookup",
+        "UX guidelines",
+        "which style",
+        "what palette",
+        "GSAP preset"
+      ]
+    },
+    {
+      "catalog_id": "image-to-code",
+      "relpath": "image-to-code",
+      "mode": "apply when relevant",
+      "domain": "design",
+      "triggers": [
+        "image to code",
+        "generate comps",
+        "section images",
+        "premium mockup",
+        "design then implement",
+        "no reference",
+        "comp first",
+        "image-first"
+      ]
+    },
+    {
+      "catalog_id": "design/addyosmani/browser-testing-with-devtools",
+      "relpath": "design/addyosmani/browser-testing-with-devtools",
+      "mode": "apply when relevant",
+      "domain": "browser",
+      "triggers": [
+        "browser testing",
+        "devtools",
+        "console errors",
+        "DOM inspect",
+        "network requests",
+        "check in browser",
+        "Chrome DevTools"
+      ]
+    },
+    {
+      "catalog_id": "seo-mastery",
+      "relpath": "seo-mastery",
+      "mode": "apply when relevant",
+      "domain": "seo",
+      "triggers": [
+        "SEO",
+        "search rankings",
+        "meta tags",
+        "robots.txt",
+        "sitemap",
+        "schema",
+        "JSON-LD",
+        "Core Web Vitals",
+        "Lighthouse",
+        "E-E-A-T",
+        "AI Overviews",
+        "technical SEO",
+        "SEO audit"
+      ]
+    },
+    {
+      "catalog_id": "cursor-subagent-creator",
+      "relpath": "cursor-subagent-creator",
+      "mode": "apply when relevant",
+      "domain": "agents",
+      "triggers": [
+        "cursor subagent",
+        "create subagent",
+        "custom subagent",
+        "subagent creator",
+        "cursor agent"
+      ]
+    }
+  ],
+  "plugins": [
+    {
+      "name": "always-use-all-skills",
+      "install_path": "local/always-use-all-skills",
+      "source": "project",
+      "mode": "always apply",
+      "note": "Light master controller from plugin/always-use-all-skills"
+    },
+    {
+      "name": "humanizer-stack",
+      "install_path": "local/humanizer-stack",
+      "source": "cursor_home",
+      "mode": "always apply",
+      "note": "Always-on two-pass humanizer-stack (NulightJens): humanizer + structural-humanizer"
+    },
+    {
+      "name": "ponytail",
+      "install_path": "local/ponytail",
+      "source": "cursor_home",
+      "mode": "apply when relevant",
+      "domain": "coding",
+      "triggers": [
+        "ponytail",
+        "simplest solution",
+        "YAGNI",
+        "lazy senior",
+        "shortest diff"
+      ],
+      "note": "Lazy senior dev: simplest correct code"
+    },
+    {
+      "name": "cursor-team-kit",
+      "install_path": "cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e",
+      "source": "cursor_home",
+      "mode": "apply when relevant",
+      "domain": "coding",
+      "triggers": [
+        "TypeScript",
+        "exhaustive switch",
+        "inline imports",
+        "CI",
+        "ship",
+        "team kit",
+        "verify this"
+      ],
+      "note": "Engineering standards, CI, review helpers"
+    },
+    {
+      "name": "thermos",
+      "install_path": "cache/cursor-public/thermos/68836ddaf5697224520f1847d90cdb90ca8babaa",
+      "source": "cursor_home",
+      "mode": "apply when relevant",
+      "domain": "review",
+      "triggers": [
+        "thermos",
+        "thermo-nuclear",
+        "thermo nuclear",
+        "PR review",
+        "security audit",
+        "maintainability",
+        "branch review",
+        "code quality review",
+        "deep review"
+      ],
+      "note": "Judgment-only deep PR/security/maintainability review"
+    },
+    {
+      "name": "advisor",
+      "install_path": "cache/cursor-public/advisor/e5a8186d7b43be8d6ac4452440fbead5f1a51c70",
+      "source": "cursor_home",
+      "mode": "apply when relevant",
+      "domain": "second-opinion",
+      "triggers": [
+        "second opinion",
+        "advisor",
+        "stronger model",
+        "consult",
+        "stuck",
+        "major decision"
+      ],
+      "note": "Official Cursor Advisor plugin: stronger model at checkpoints, judgment-based, never auto-enabled"
+    }
+  ],
+  "rules": [
+    {
+      "catalog_id": ".cursor/rules/always-use-all-skills.mdc",
+      "name": "always-use-all-skills",
+      "path": "~/.cursor/rules/always-use-all-skills.mdc",
+      "mode": "always apply",
+      "source": "plugin"
+    },
+    {
+      "catalog_id": ".cursor/rules/humanizer-stack.mdc",
+      "name": "humanizer-stack",
+      "path": "~/.cursor/rules/humanizer-stack.mdc",
+      "mode": "always apply",
+      "source": "cursor_home",
+      "description": "Always-on binder for humanizer + structural-humanizer."
+    },
+    {
+      "catalog_id": ".cursor/rules/project-memory.mdc",
+      "name": "project-memory",
+      "path": "~/.cursor/rules/project-memory.mdc",
+      "mode": "always apply",
+      "source": "plugin",
+      "description": "Forced .cursor/memory/ create-read-write protocol for every workspace."
+    },
+    {
+      "catalog_id": "ponytail/rules/ponytail.mdc",
+      "name": "ponytail",
+      "path": "~/.cursor/plugins/local/ponytail/rules/ponytail.mdc",
+      "mode": "apply when relevant",
+      "domain": "coding",
+      "source": "plugin"
+    },
+    {
+      "catalog_id": "cursor-team-kit/rules/no-inline-imports.mdc",
+      "name": "no-inline-imports",
+      "path": "~/.cursor/plugins/cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e/rules/no-inline-imports.mdc",
+      "mode": "apply when relevant",
+      "domain": "coding",
+      "source": "plugin"
+    },
+    {
+      "catalog_id": "cursor-team-kit/rules/typescript-exhaustive-switch.mdc",
+      "name": "typescript-exhaustive-switch",
+      "path": "~/.cursor/plugins/cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e/rules/typescript-exhaustive-switch.mdc",
+      "mode": "apply when relevant",
+      "domain": "coding",
+      "source": "plugin"
+    },
+    {
+      "catalog_id": ".cursor/rules/rtk.mdc",
+      "name": "rtk",
+      "path": "~/.cursor/rules/rtk.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force RTK shell-output compression via preToolUse hook plus direct rtk read/grep/find."
+    },
+    {
+      "catalog_id": ".cursor/rules/mcptoon.mdc",
+      "name": "mcptoon",
+      "path": "~/.cursor/rules/mcptoon.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force mcptoon skill/tool resolution so full schemas stay out of context."
+    },
+    {
+      "catalog_id": ".cursor/rules/context-mode.mdc",
+      "name": "context-mode",
+      "path": "~/.cursor/rules/context-mode.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force context-mode ctx_execute/ctx_search so raw output stays in the sandbox."
+    },
+    {
+      "catalog_id": ".cursor/rules/sqz-squeez.mdc",
+      "name": "sqz-squeez",
+      "path": "~/.cursor/rules/sqz-squeez.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force sqz + squeez reversible compression of tool output."
+    },
+    {
+      "catalog_id": ".cursor/rules/jcodemunch.mdc",
+      "name": "jcodemunch",
+      "path": "~/.cursor/rules/jcodemunch.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force jCodeMunch symbol-level retrieval over whole-file reads."
+    },
+    {
+      "catalog_id": ".cursor/rules/claude-context.mdc",
+      "name": "claude-context",
+      "path": "~/.cursor/rules/claude-context.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force Claude Context semantic code search; local Milvus + Ollama."
+    },
+    {
+      "catalog_id": ".cursor/rules/cce.mdc",
+      "name": "cce",
+      "path": "~/.cursor/rules/cce.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Force Code Context Engine context_search over whole-file reads."
+    },
+    {
+      "catalog_id": ".cursor/rules/token-optimizer.mdc",
+      "name": "token-optimizer",
+      "path": "~/.cursor/rules/token-optimizer.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Per-session token accounting (Cursor adapter); RTK owns Shell."
+    },
+    {
+      "catalog_id": ".cursor/rules/lumen.mdc",
+      "name": "lumen",
+      "path": "~/.cursor/rules/lumen.mdc",
+      "mode": "always apply",
+      "domain": "token-optimization",
+      "source": "cursor_home",
+      "description": "Lumen local semantic code search via the mcptoon gateway."
+    },
+    {
+      "catalog_id": ".cursor/rules/voice.mdc",
+      "name": "voice",
+      "path": "~/.cursor/rules/voice.mdc",
+      "mode": "always apply",
+      "domain": "voice",
+      "source": "cursor_home",
+      "description": "Hard bans + terse rules; humanizer law on demand."
+    }
+  ]
+}

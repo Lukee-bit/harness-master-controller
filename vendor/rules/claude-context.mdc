@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Force one semantic code-search engine (Claude Context) for conceptual questions.
+---
+
+# Claude Context (forced)
+
+Semantic code search: embeddings (Ollama `nomic-embed-text`) + Milvus (`127.0.0.1:19530`). Fully local.
+
+- Conceptual or codebase-wide questions: `search_code` via `mcptoon_call claude-context search_code`.
+- Exact symbols: prefer jCodeMunch. Semantic engines find concepts; jCodeMunch returns source.
+- Index first: `index_codebase`, confirm with `get_indexing_status`.
+- Dense-only (`HYBRID_MODE=false`); hybrid fails on this Milvus build. Backend must be up (colima/Docker + Ollama + Milvus).

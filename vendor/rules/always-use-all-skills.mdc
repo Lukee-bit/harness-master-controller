@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+description: Light master controller. Always-on voice, memory, Headroom, gateway, and a small conditional catalog.
+---
+
+# Always Use All Skills (Light)
+
+Small always-on spine; pull any skill/plugin/rule/tool on demand. Hooks enforce routing, voice, memory.
+
+## Always apply
+
+1. This rule
+2. Skill `~/.cursor/skills/my-workflow/always-use-all-skills/SKILL.md`
+3. `voice.mdc` (hard bans + terse rules)
+4. `project-memory` (forced `.cursor/memory/`)
+5. HEADROOM FORCE (MCP)
+6. `mcptoon` gateway (all other MCP tools)
+
+Voice: hard bans every reply (see `voice.mdc`). Full humanizer law loads only when the user asks to humanize, de-slop, or review prose.
+
+## PROJECT MEMORY FORCE
+
+Missing `.cursor/memory/`? Create and seed `project.md`, `activeContext.md`, `progress.md`, `decisions.md`, `research/`. Read the core three before non-trivial work; update after. Never store secrets. Full law in `project-memory.mdc`.
+
+## HEADROOM FORCE
+
+Call `headroom_compress` on tool output over ~1500 tokens before reasoning; `headroom_retrieve` by hash for originals; `headroom_stats` for health. Never skip. Do not run `headroom learn` into `.cursor/rules`. Proxy stays up.
+
+## mcptoon gateway
+
+Direct MCP: `headroom` + `mcptoon` only. Everything else (`sqz`, `squeez`, `context-mode`, `jcodemunch`, `claude-context`, `context-engine`, `claude-mem`, `lumen`) via `mcptoon_call`. Full law in `mcptoon.mdc`.
+
+## ADVISOR (judgment)
+
+Not auto-enabled. Consult only when a second opinion materially helps. Omit Task `model` or pass `inherit` unless the user names a slug from this session's `available_subagent_models`. Never invent a model-pool file. Prefer `nudge: false`.
+
+## SUBAGENTS
+
+Use only `subagent_type` values in this session's Task tool. Omit `model` or pass `inherit`. New custom agent: write `.cursor/agents/<name>.md` (valid frontmatter, non-empty body, `model: inherit`), then Reload Window.
+
+## LIGHT CATALOG JUDGMENT (every turn)
+
+Router matches are a floor; this list is the ceiling. Read and apply what fits.
+
+| Item | Load when |
+|------|-----------|
+| design-taste-frontend | References, URLs, landing/portfolio UI |
+| frontend-design | Distinct art direction |
+| ui-ux-pro-max | Style / font / palette / UX lookup |
+| image-to-code | Comp-first; no strong reference |
+| browser-testing-with-devtools | Verify in browser |
+| seo-mastery | SEO / schema / CWV / AI search |
+| ponytail | Build / simplify / shortest correct code |
+| cursor-team-kit | TS standards, CI, ship helpers |
+| thermos | Deep PR / security / maintainability review |
+| advisor (plugin) | Second opinion at a decision, stuck, or before done |
+| cursor-subagent-creator | Build a custom Cursor subagent |
+
+Indexes: `~/.cursor/plugins/local/always-use-all-skills/catalogs/*-index.json`. Never load two variants of one skill for a subtask. Never pull skills outside this catalog.

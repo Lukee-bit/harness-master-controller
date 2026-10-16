@@ -1,0 +1,92 @@
+{
+  "generated_at": "2026-10-16T03:27:25.313575+00:00",
+  "edition": "light",
+  "count": 6,
+  "items": [
+    {
+      "name": "always-use-all-skills",
+      "display_name": "always-use-all-skills",
+      "path": "~/.cursor/plugins/local/always-use-all-skills/.cursor-plugin",
+      "mode": "always apply",
+      "description": "Light master controller from plugin/always-use-all-skills",
+      "triggers": [],
+      "domain": ""
+    },
+    {
+      "name": "humanizer-stack",
+      "display_name": "humanizer-stack",
+      "path": "~/.cursor/plugins/local/humanizer-stack/.cursor-plugin",
+      "mode": "always apply",
+      "description": "Always-on two-pass humanizer-stack (NulightJens): humanizer + structural-humanizer",
+      "triggers": [],
+      "domain": ""
+    },
+    {
+      "name": "ponytail",
+      "display_name": "ponytail",
+      "path": "~/.cursor/plugins/local/ponytail/.cursor-plugin",
+      "mode": "apply when relevant",
+      "description": "Lazy senior dev: simplest correct code",
+      "triggers": [
+        "ponytail",
+        "simplest solution",
+        "YAGNI",
+        "lazy senior",
+        "shortest diff"
+      ],
+      "domain": "coding"
+    },
+    {
+      "name": "cursor-team-kit",
+      "display_name": "cursor-team-kit",
+      "path": "~/.cursor/plugins/cache/cursor-public/cursor-team-kit/2eb7ed4613cfc8f098dfe464a23680ea44d84c5e/.cursor-plugin",
+      "mode": "apply when relevant",
+      "description": "Engineering standards, CI, review helpers",
+      "triggers": [
+        "TypeScript",
+        "exhaustive switch",
+        "inline imports",
+        "CI",
+        "ship",
+        "team kit",
+        "verify this"
+      ],
+      "domain": "coding"
+    },
+    {
+      "name": "thermos",
+      "display_name": "thermos",
+      "path": "~/.cursor/plugins/cache/cursor-public/thermos/68836ddaf5697224520f1847d90cdb90ca8babaa/.cursor-plugin",
+      "mode": "apply when relevant",
+      "description": "Judgment-only deep PR/security/maintainability review",
+      "triggers": [
+        "thermos",
+        "thermo-nuclear",
+        "thermo nuclear",
+        "PR review",
+        "security audit",
+        "maintainability",
+        "branch review",
+        "code quality review",
+        "deep review"
+      ],
+      "domain": "review"
+    },
+    {
+      "name": "advisor",
+      "display_name": "advisor",
+      "path": "~/.cursor/plugins/cache/cursor-public/advisor/e5a8186d7b43be8d6ac4452440fbead5f1a51c70/.cursor-plugin",
+      "mode": "apply when relevant",
+      "description": "Official Cursor Advisor plugin: stronger model at checkpoints, judgment-based, never auto-enabled",
+      "triggers": [
+        "second opinion",
+        "advisor",
+        "stronger model",
+        "consult",
+        "stuck",
+        "major decision"
+      ],
+      "domain": "second-opinion"
+    }
+  ]
+}

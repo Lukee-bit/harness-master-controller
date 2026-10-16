@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+description: Prefer Code Context Engine context_search over whole-file reads; track savings.
+---
+
+# Code Context Engine (CCE) - forced
+
+Tree-sitter index + `context_search` MCP (`mcptoon_call context-engine context_search`). Git hooks keep it current.
+
+- Prefer `context_search` over reading whole files.
+- `cce savings` = tracked tokens/dollars; `cce status` = index health.
+- Backend: bundled fastembed, local, no external service.

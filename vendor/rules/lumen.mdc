@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+description: Lumen local semantic code search, loaded as a direct Cursor plugin MCP server.
+---
+
+# Lumen (forced)
+
+Ory Lumen: local semantic code search (Ollama embeddings + SQLite-vec). Loaded as a direct Cursor plugin MCP server (`~/.cursor/plugins/local/lumen`, binary `bin/lumen-darwin-arm64`); index in `~/.local/share/lumen/`.
+
+- Conceptual lookup: call the `semantic_search` tool directly. It accepts `query` and `path` only.
+- Pass `path` explicitly when the session cwd is not the workspace (it defaults to cwd, and indexing the home dir wastes work).
+- Health/status: `health_check`, `index_status` (both take `path`).
+- Reindex after large changes: `lumen index . --backend ollama`. A full reindex of this workspace is ~30s.
+- One of four code-search engines (jCodeMunch, Claude Context, CCE, Lumen). Use one per query; a second only if the first misses.
+- The plugin's MCP config must use an absolute binary path; a relative `./scripts/run` fails with ENOENT because Cursor resolves it against the workspace root.

@@ -1,0 +1,31 @@
+{
+  "name": "always-use-all-skills",
+  "displayName": "Always Use All Skills (Light)",
+  "version": "2.1.0-light",
+  "description": "Light master controller with forced project memory, tiny conditional catalog (design/coding/SEO/browser/thermos review), and MCP/Advisor documented outside catalogs.",
+  "author": {
+    "name": "John"
+  },
+  "license": "MIT",
+  "keywords": [
+    "always-use-all-skills",
+    "master-controller-light",
+    "skills",
+    "plugins",
+    "rules",
+    "human-voice-rewrite",
+    "unslop",
+    "agent-policy"
+  ],
+  "category": "developer-tools",
+  "tags": [
+    "controller",
+    "policy",
+    "skills",
+    "always-on",
+    "light"
+  ],
+  "skills": "./skills/",
+  "rules": "./rules/",
+  "hooks": "./hooks/hooks.json"
+}

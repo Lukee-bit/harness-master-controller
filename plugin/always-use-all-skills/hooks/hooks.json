@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{ "command": "./hooks/session-start.sh" }],
+    "beforeSubmitPrompt": [{ "command": "./hooks/route-skills.sh", "matcher": "UserPromptSubmit" }],
+    "preToolUse": [{ "command": "./hooks/inject-task-skills.sh", "matcher": "Task" }],
+    "postToolUse": [{ "command": "./hooks/track-reads.sh", "matcher": "Read" }],
+    "subagentStart": [{ "command": "./hooks/subagent-policy.sh" }],
+    "stop": [{ "command": "./hooks/voice-lint-stop.sh", "loop_limit": 3 }],
+    "afterTabFileEdit": [{ "command": "./hooks/tab-prose-lint.sh" }]
+  }
+}

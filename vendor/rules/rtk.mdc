@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Force RTK shell-output compression via the preToolUse hook plus direct rtk read/grep/find.
+---
+
+# RTK (forced)
+
+The `preToolUse` hook rewrites Shell commands (git, ls, rg, docker, kubectl, test, 100+). It fires only on Shell calls; built-in Read/Grep/Glob do not pass through it.
+
+- Prefer RTK-covered shell commands; output comes back compact.
+- For long Read/Grep/Glob output, call `rtk read`, `rtk grep`, `rtk find`, or `rtk rg` directly.
+- `rtk gain` shows cumulative savings.
+- Never bypass the hook for long output; never use it when byte-exact text is needed for a patch.

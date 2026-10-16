@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Token Optimizer (Cursor adapter) per-session token accounting. RTK owns Shell.
+---
+
+# Token Optimizer (Cursor)
+
+alexgreensh/token-optimizer, Cursor beta adapter. Source `~/.cursor/tools/token-optimizer-src`; payload `~/.cursor/token-optimizer/plugin/`. License PolyForm Noncommercial: personal use only.
+
+- `measure.py cursor-summary` for per-session tokens/quality; `cursor-doctor` for readiness.
+- Its accounting hooks (sessionStart, postToolUse, preCompact, stop, sessionEnd) are wired. RTK owns the Shell preToolUse; do not re-add Token Optimizer's.
+- After any reinstall, run `~/.cursor/tools/token-optimizer-src/de-collide-rtk.sh`.
+- Cost figures are not billing truth: Cursor exposes no cost, so it reports `cursor_no_cost_data`.

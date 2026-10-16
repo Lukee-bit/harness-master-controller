@@ -1,0 +1,17 @@
+---
+alwaysApply: true
+description: Humanizer-stack pointer. The hard bans live in voice.mdc; the full two-pass law loads on request.
+---
+
+# Humanizer Stack (rule)
+
+Hard bans for every reply live in `voice.mdc`. This rule is a pointer only, so the large skill bodies are not read by default.
+
+## Full law (on demand)
+
+When the user asks to humanize, de-slop, or review prose, load the two passes in order:
+
+1. `humanizer` (words/phrasing): `~/.cursor/skills/humanizer/SKILL.md`
+2. `structural-humanizer` (discourse): `~/.cursor/skills/structural-humanizer/SKILL.md`
+
+Then `human-voice-rewrite` and `unslop` as the voice layer. Humanizer stack overrides default tone on AI-tell removal. Never name the stack in replies. Do not stamp one new skeleton every draft; pick 1-2 structural interventions and vary them.

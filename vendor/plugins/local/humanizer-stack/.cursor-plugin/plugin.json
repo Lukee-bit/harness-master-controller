@@ -1,0 +1,8 @@
+{
+  "name": "humanizer-stack",
+  "displayName": "Humanizer Stack",
+  "description": "Two-pass AI-writing removal: humanizer (surface) then structural-humanizer (discourse). From NulightJens/humanizer-stack.",
+  "version": "2.1.1",
+  "author": { "name": "NulightJens" },
+  "keywords": ["humanizer", "deslop", "humanize", "structural-humanizer", "voice"]
+}

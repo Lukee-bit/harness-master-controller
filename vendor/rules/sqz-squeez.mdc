@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Force sqz + squeez reversible compression of tool output.
+---
+
+# sqz + squeez (forced)
+
+Deterministic, no LLM, both reversible.
+
+- Prefer `sqz_*` MCP tools for long reads, greps, listings.
+- Pipe long shell output through `sqz compress`; recover with `expand`.
+- `squeez mcp` gives `squeez_retrieve` to expand a compressed output by key.
+- Pick one per payload; never stack both. Never use compressed output for a patch.

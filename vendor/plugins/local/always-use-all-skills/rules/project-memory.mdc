@@ -1,0 +1,46 @@
+---
+alwaysApply: true
+description: Forced project memory. Create and continuously update .cursor/memory/ in every workspace.
+---
+
+# Project Memory (forced)
+
+ALWAYS apply. No opt-out. One memory system only: `.cursor/memory/` at the workspace root.
+
+## Create if missing
+
+If `.cursor/memory/` does not exist:
+
+1. Create `.cursor/memory/` and `.cursor/memory/research/`.
+2. Seed `project.md`, `activeContext.md`, `progress.md`, `decisions.md` (use light-controller templates if available under `~/Projects/cursor-master-controller-light/templates/memory/`).
+3. If workspace root has no `AGENTS.md`, copy the light-controller `templates/AGENTS.md`.
+
+## Before non-trivial work
+
+Read at least:
+
+- `.cursor/memory/project.md`
+- `.cursor/memory/activeContext.md`
+- `.cursor/memory/progress.md`
+
+Also Read task-matched files under `.cursor/memory/research/` only. Do not dump the entire tree when large.
+
+## During work
+
+When you discover durable project knowledge (stack, commands, architecture, decisions, constraints), save it immediately to the appropriate file.
+
+## After significant progress
+
+1. Update `activeContext.md` (overwrite OK for current focus).
+2. Append a dated block to `progress.md`.
+3. Append dated decisions to `decisions.md` when a choice was made.
+
+## End of task
+
+Memory pass required. If nothing durable changed, append one dated line to `progress.md`: `no durable updates`.
+
+## Hard bans
+
+- Never store secrets, tokens, API keys, `.env` contents, or credentials.
+- Do not create parallel Memory Bank mode folders or a separate `context/` memory tree.
+- Append history in `progress.md` / `decisions.md`; do not erase prior dated entries.

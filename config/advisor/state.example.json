@@ -1,0 +1,12 @@
+{
+  "enabled": true,
+  "model": "inherit",
+  "nudge": false,
+  "advisor_agent_id": null,
+  "conversation_id": null,
+  "transcript_path": null,
+  "consults": 0,
+  "last_consult_at": null,
+  "enabled_at": "2026-01-01T00:00:00Z",
+  "_comment": "Example only. model defaults to inherit (Task parent). nudge defaults false for judgment Advisor (no stop spam). Do not commit secrets. Light install never auto-copies this into a repo and never auto-enables the mode."
+}

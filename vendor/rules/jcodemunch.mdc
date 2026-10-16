@@ -1,0 +1,13 @@
+---
+alwaysApply: true
+description: Prefer jCodeMunch symbol tools for exact code retrieval over whole-file reads.
+---
+
+# jCodeMunch (forced)
+
+Indexes repo symbols; returns exact symbol source, not whole files.
+
+- Find a symbol, outline a file, who-calls, blast radius, dead code: use `order`, `route`, `menu`, `jcodemunch_guide`.
+- First call in a session: `order { "action": "resolve_repo", "args": { "path": "." } }`; index if needed.
+- Exact source: `get_symbol_source`. After edits: `register_edit`.
+- Native Read/Grep still win for a known path or a file you will edit. The harness requires a Read before Edit/Write.

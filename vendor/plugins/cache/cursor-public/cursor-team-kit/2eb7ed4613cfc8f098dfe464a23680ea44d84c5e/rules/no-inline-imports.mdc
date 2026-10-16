@@ -1,0 +1,9 @@
+---
+globs: ["**/*.{ts,tsx,js,jsx,mjs,cjs,py,go,rs,java,kt,c,h,cpp,cc,cs,rb,php,swift,scala,sh,bash,sql}"]
+description: Keep imports at top of file and avoid inline imports
+alwaysApply: false
+---
+
+# No inline imports
+
+Always place imports at the top of the module. Avoid inline imports in function bodies, type annotations, or interface fields unless there is a strict circular-dependency reason and it is documented.

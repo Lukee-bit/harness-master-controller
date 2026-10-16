@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+description: Force mcptoon for tool and skill discovery and for reaching gateway MCP servers; keep schemas out of context.
+---
+
+# mcptoon (forced)
+
+Six-plus MCP servers run behind the mcptoon gateway. Only `headroom` and `mcptoon` are connected directly.
+
+- Find a skill: `mcptoon_resolve_skills "<task>"`. Read only those `SKILL.md` files.
+- Find a tool: `mcptoon_manifest` or `mcptoon_inspect <server> <tool>` on demand.
+- Call a gateway server: `mcptoon_call <server> <tool> [args]`. Servers: `sqz`, `squeez`, `context-mode`, `jcodemunch`, `claude-context`, `context-engine`, `claude-mem`, `lumen`.
+- Headroom stays direct: call `headroom_compress` / `headroom_retrieve` / `headroom_stats` itself.
+- Never dump the full skill catalog or every tool schema. Never re-add a gateway server as direct; `mcptoon restore` if needed.

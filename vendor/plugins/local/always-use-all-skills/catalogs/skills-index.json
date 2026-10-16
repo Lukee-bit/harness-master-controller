@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-10-16T03:27:25.313038+00:00",
+  "edition": "light",
+  "count": 13,
+  "items": [
+    {
+      "catalog_id": "my-workflow/always-use-all-skills",
+      "name": "always-use-all-skills",
+      "path": "~/.cursor/skills/my-workflow/always-use-all-skills/SKILL.md",
+      "mode": "always apply",
+      "description": "Light master controller. Always apply. Enforces voice trio, forced project-memory, judgment-based Advisor (Task inherit / session allowlist), and a tiny conditional catalog (design, coding, SEO, browser, thermos review, subagent-creator).",
+      "triggers": [
+        "always use all skills",
+        "master controller"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "humanizer",
+      "name": "humanizer",
+      "path": "~/.cursor/skills/humanizer/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "|",
+      "triggers": [
+        "humanize",
+        "humanizer",
+        "deslop",
+        "de-slop",
+        "AI writing",
+        "surface pass"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "structural-humanizer",
+      "name": "structural-humanizer",
+      "path": "~/.cursor/skills/structural-humanizer/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Always-on voice stack (pass 2) under this controller. Remove discourse-level AI writing signs after humanizer: stated lessons, tidy single-track arcs, embodied-emotion performance, vague allusions, unbroken linear structure, shape convergence. Grounded in StoryScope (Russell et al. 2026). Triggers still match \"humanize\", \"de-slop\", \"structural pass\", \"deep humanize\".",
+      "triggers": [
+        "structural humanizer",
+        "structural pass",
+        "deep humanize",
+        "discourse",
+        "storyscope"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "my-workflow/human-voice-rewrite",
+      "name": "human-voice-rewrite",
+      "path": "~/.cursor/skills/my-workflow/human-voice-rewrite/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Rewrites or generates text so it reads as natural human writing rather than AI output, and resists AI-detection tools such as GPTZero, Originality.AI, and Copyleaks. Use when the user asks to humanize text, make writing undetectable as AI, sound like a real person, bypass AI detectors, or requests a \"human peer\" tone for any draft, email, article, or response.",
+      "triggers": [
+        "human voice",
+        "rewrite voice"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "my-workflow/unslop",
+      "name": "unslop",
+      "path": "~/.cursor/skills/my-workflow/unslop/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Cut AI tells from any writing. Must always apply.",
+      "triggers": [
+        "unslop",
+        "remove slop"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "my-workflow/project-memory",
+      "name": "project-memory",
+      "path": "~/.cursor/skills/my-workflow/project-memory/SKILL.md",
+      "mode": "always apply",
+      "description": "Forced workspace memory. Always apply. Create and continuously update .cursor/memory/ (project, activeContext, progress, decisions, research). Merges saving-workspace-context habits and Memory Bank file schema without Memory Bank modes.",
+      "triggers": [
+        "project memory",
+        "workspace memory",
+        ".cursor/memory",
+        "activeContext",
+        "durable knowledge"
+      ],
+      "domain": ""
+    },
+    {
+      "catalog_id": "design-taste-frontend",
+      "name": "design-taste-frontend",
+      "path": "~/.cursor/skills/design-taste-frontend/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check.",
+      "triggers": [
+        "landing page",
+        "portfolio",
+        "redesign",
+        "Awwwards",
+        "Linear-style",
+        "reference site",
+        "screenshot",
+        "beautiful website",
+        "anti-slop frontend",
+        "design taste",
+        "UI direction",
+        "like Linear",
+        "like Stripe"
+      ],
+      "domain": "design"
+    },
+    {
+      "catalog_id": "design/anthropics/frontend-design",
+      "name": "frontend-design",
+      "path": "~/.cursor/skills/design/anthropics/frontend-design/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "triggers": [
+        "frontend design",
+        "distinctive UI",
+        "visual identity",
+        "typography",
+        "aesthetic direction",
+        "templated UI",
+        "art direction"
+      ],
+      "domain": "design"
+    },
+    {
+      "catalog_id": "ui-ux-pro-max",
+      "name": "ui-ux-pro-max",
+      "path": "~/.cursor/skills/ui-ux-pro-max/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+      "triggers": [
+        "ui ux",
+        "font pairing",
+        "color palette",
+        "design system lookup",
+        "UX guidelines",
+        "which style",
+        "what palette",
+        "GSAP preset"
+      ],
+      "domain": "design"
+    },
+    {
+      "catalog_id": "image-to-code",
+      "name": "image-to-code",
+      "path": "~/.cursor/skills/image-to-code/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as closely as possible. In Codex, it must prefer large, readable, section-specific images instead of tiny compressed boards, generate fresh standalone images for sections or detail views instead of cropping old ones, avoid lazy under-generation, avoid cards-inside-cards-inside-cards UI, and keep the hero cl",
+      "triggers": [
+        "image to code",
+        "generate comps",
+        "section images",
+        "premium mockup",
+        "design then implement",
+        "no reference",
+        "comp first",
+        "image-first"
+      ],
+      "domain": "design"
+    },
+    {
+      "catalog_id": "design/addyosmani/browser-testing-with-devtools",
+      "name": "browser-testing-with-devtools",
+      "path": "~/.cursor/skills/design/addyosmani/browser-testing-with-devtools/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network requests, profile performance, or verify visual output with real runtime data. Requires the chrome-devtools MCP server to be configured.",
+      "triggers": [
+        "browser testing",
+        "devtools",
+        "console errors",
+        "DOM inspect",
+        "network requests",
+        "check in browser",
+        "Chrome DevTools"
+      ],
+      "domain": "browser"
+    },
+    {
+      "catalog_id": "seo-mastery",
+      "name": "seo-mastery",
+      "path": "~/.cursor/skills/seo-mastery/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Comprehensive SEO optimization skill based on Google's official guidelines. Covers technical SEO, content SEO, structured data (JSON-LD), Core Web Vitals, E-E-A-T strategies, AI search (AI Overviews / AI Mode) and AI crawler control, practical code generation, and site audit workflows. Use when the user asks about SEO, search rankings, meta tags, robots.txt, sitemaps, canonical or hreflang tags, schema.org structured data, rich results, LCP/INP/CLS, Lighthouse or PageSpeed scores, AI Overviews /",
+      "triggers": [
+        "SEO",
+        "search rankings",
+        "meta tags",
+        "robots.txt",
+        "sitemap",
+        "schema",
+        "JSON-LD",
+        "Core Web Vitals",
+        "Lighthouse",
+        "E-E-A-T",
+        "AI Overviews",
+        "technical SEO",
+        "SEO audit"
+      ],
+      "domain": "seo"
+    },
+    {
+      "catalog_id": "cursor-subagent-creator",
+      "name": "cursor-subagent-creator",
+      "path": "~/.cursor/skills/cursor-subagent-creator/SKILL.md",
+      "mode": "apply when relevant",
+      "description": "Creates Cursor-specific AI subagents with isolated context for complex multi-step workflows. Use when creating subagents for Cursor editor specifically, following Cursor's patterns and directories (.cursor/agents/). Triggers on \"cursor subagent\", \"cursor agent\". Do NOT use for generic subagent creation outside Cursor (use subagent-creator instead).",
+      "triggers": [
+        "cursor subagent",
+        "create subagent",
+        "custom subagent",
+        "subagent creator",
+        "cursor agent"
+      ],
+      "domain": "agents"
+    }
+  ]
+}

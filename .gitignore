@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Backups and local state
+*.bak
+*.local
+.env
+.env.*
+
+# Editor
+.idea/
+.vscode/settings.json
