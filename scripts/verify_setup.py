@@ -583,12 +583,20 @@ sys.exit(0 if saved > 0 else 2)
             fail(f"optimizer CLI missing: {binary}")
             errors += 1
 
-    # Caveman skill present, injection disabled, skill still callable.
-    if (CURSOR_HOME / "caveman/skills/caveman/SKILL.md").is_file():
+    # Caveman is optional (installed by its own `npx` installer, not by
+    # install.sh). When present, assert the injection is off; skip when absent.
+    cav_skill = CURSOR_HOME / "caveman/skills/caveman/SKILL.md"
+    if cav_skill.is_file():
         ok("caveman skill installed")
+        hooks_txt = HOOKS_JSON.read_text(encoding="utf-8") if HOOKS_JSON.is_file() else ""
+        if "caveman-host-session-start" not in hooks_txt:
+            ok("caveman sessionStart injection removed")
+        else:
+            fail("caveman sessionStart hook still wired (injects ~1.1k tok/session)")
+            errors += 1
     else:
-        fail("caveman skill missing")
-        errors += 1
+        ok("caveman not installed (optional; run its npx installer to enable)")
+
     try:
         cav_cfg = json.loads((HOME / ".config/caveman/config.json").read_text(encoding="utf-8"))
         cav_mode = str(cav_cfg.get("defaultMode", "")).lower()
@@ -598,14 +606,8 @@ sys.exit(0 if saved > 0 else 2)
             fail(f"caveman injects a ruleset every session (defaultMode={cav_mode}); set manual to save tokens")
             errors += 1
     except Exception:
-        fail("caveman config missing (~/.config/caveman/config.json)")
-        errors += 1
-    hooks_txt = HOOKS_JSON.read_text(encoding="utf-8") if HOOKS_JSON.is_file() else ""
-    if "caveman-host-session-start" not in hooks_txt:
-        ok("caveman sessionStart injection removed")
-    else:
-        fail("caveman sessionStart hook still wired (injects ~1.1k tok/session)")
-        errors += 1
+        # No config means caveman is not configured; treat as optional-absent.
+        ok("caveman config absent (optional)")
 
     # Portable MCP config generator installed.
     if (SCRIPTS / "setup-mcp.sh").is_file() or (CURSOR_HOME / "scripts/master-controller/setup-mcp.sh").is_file():
