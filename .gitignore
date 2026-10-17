@@ -15,3 +15,7 @@ __pycache__/
 # Editor
 .idea/
 .vscode/settings.json
+
+# Local session memory (personal history, not shipped)
+.cursor/memory/
+.cursor/advisor/
